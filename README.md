@@ -7,6 +7,8 @@ And in "nqueens.cpp", we set the number N at the beginning, and the programme wi
 "queen_seq" in the C++ file is a vector of length N, representing the position of each queen(each row has only one queen).
 "hf" is the evaluation function, the queen who has the largest hf will be moved. The actual meaning of hf is the 'conflict number' of each queen.
 
+This is just the first step to a mature heuristic algorithm. In the essay '3,000,000 Queens in Less Than One Minute' several more efficient and improved algorithms have be displayed. Though it is true that these algortihms are all basically based on this 'alpha version' hill-climbing algorithm, to actually shorten the time in such a degree is not quite easy. In this algorithm we only require each row has only one queen, but, for instance, in the QS1 algorithm each row and each column are designed to have only one queen at the same time, hence we only have to consider the diagonals.
+
 在nqueens.cpp中在宏中设置N皇后的N值，程序找到100个全局最优解（即N皇后的解）后会退出，
 并输出文件output.txt记录每一次得解所用步数（即找到几个不合格的局部最优解）以及所用时间，单位为s。同时也会输出平均用时。
 
@@ -26,4 +28,3 @@ And in "nqueens.cpp", we set the number N at the beginning, and the programme wi
 	可改进之处：
 	“爬山”过程可以不用直接移到hf最小处，可以采用模拟退火算法，这样可以减少每次找全局解需要的重启（或尝试）次数，但每次会走更多步
 	究竟哪种方法更快很难说
-
